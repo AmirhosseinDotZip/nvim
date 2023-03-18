@@ -63,3 +63,13 @@ keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>") -- Find specific text
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>")   -- Find specific text
 keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>") -- Find specific text
 keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>")   -- Find specific text
+keymap("n", "<leader>tp", "<cmd>Telescope projects<cr>") -- List of projects
+
+
+-- Kommentary
+-- Default configuration
+keymap("n", "gcc", "<Plug>kommentary_line_default", {})
+keymap("n", "gc", "<cmd>kommentary_motion_default", {})
+keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
+
+keymap("n", "<leader>l", ":LspInstallInfo<cr>")
