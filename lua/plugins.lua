@@ -61,6 +61,18 @@ return packer.startup(function(use)
 
     use "b3nj5m1n/kommentary"             -- Commenting plugin
 
+    use 'nvim-lualine/lualine.nvim'       -- Easy to configure neovim statusline
+    use "akinsho/toggleterm.nvim"         -- Easily manage multiple terminal windows
+    use "akinsho/bufferline.nvim"         -- Snazzy bufferline
+    -- use "moll/vim-bbye"                   -- Bclose.vim but rewritten and well maintained.
+    -- use "dhruvmanila/browser-bookmarks.nvim"
+
+
+    use { 'crusj/bookmarks.nvim',
+        branch = 'main',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+
 
 
     if PACKER_BOOTSTRAP then

@@ -32,7 +32,7 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {
         LineNr = { bg = "none", fg = "#b3b3b3" },
-        Comment = { bg = "none", fg = "#ffffff" }
+        Comment = { bg = "none", fg = "#9c8e8e" }
     },
     integrations = {
         cmp = true,

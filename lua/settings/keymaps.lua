@@ -23,26 +23,28 @@ keymap('n', '<C-Left>', ':vertical resize +2<CR>')  -- Left resize
 
 keymap('n', '<S-l>', ':bnext<CR>')                  -- Next buffer
 keymap('n', '<S-h>', ':bprevious<CR>')              -- Previous buffer
-keymap('n', '<C-w>', ':Bdelete<CR>')                -- Close buffer
+-- keymap('n', '<C-w>', ':bdelete<CR>')                  -- Close buffer
+keymap('n', '<C-w>', ':bdelete<CR>')                -- Close buffer
+
+keymap('i', 'jj', '<ESC>')                          -- Escape i mode
+
+keymap('i', '<C-s>', '<C-o>:w<CR>')                 -- Save
+keymap('n', '<C-s>', ':w<CR>')                      -- Save
+keymap('n', '<C-q>', ':wq!<CR>')                    -- Save and exit
+keymap('n', '<C-c>', ':source %<cr>')               -- Save and exit
+
+keymap('n', 'n', 'nzzzv')                           -- Better movement for next command
+keymap('n', 'N', 'Nzzzv')                           -- Better movement for next command
 
 
-keymap('i', 'jj', '<ESC>')          -- Escape i mode
 
-keymap('i', '<C-s>', '<C-o>:w<CR>') -- Save
-keymap('n', '<C-s>', ':w<CR>')      -- Save
-keymap('n', '<C-q>', ':wq!<CR>')    -- Save and exit
+keymap('n', '<C-c>', '"+yy')       -- Copy current line in normal mode
+keymap('v', '<C-c>', '"+y')        -- Copy selected lines in visual mode
+keymap('i', '<C-c>', '<Esc>"+yyi') -- Copy current line in insert mode
+keymap('n', '<C-v>', '"+p')        -- Paste copied line in normal mode
+keymap('v', '<C-v>', '"+p')        --- Paste copied line in visual mode
+keymap('i', '<C-v>', '<Esc>"+pi')  -- Paste copied line in insert mode
 
-keymap('n', 'n', 'nzzzv')           -- Better movement for next command
-keymap('n', 'N', 'Nzzzv')           -- Better movement for next command
-
-
--- keymap('i', 'C-c', 'yy')                                 -- Copy line from cursor
--- keymap('n', 'C-c', 'yy')                                 -- Copy line from cursor
--- keymap('v', '<C-c>', '"+y')                              -- Copy
--- keymap('n', 'Y', 'y$')                                   -- Copy line from cursor
--- keymap('i', '<C-v>', '<Esc>"+p')                         -- Paste
--- keymap('n', '<C-v>', '"+p')                              -- Paste
--- keymap("v", "<C-v>", '"_dP')                             -- Paste
 
 keymap('n', '<C-b>', ':NvimTreeToggle<cr>')              -- Open explorer tree
 
@@ -64,12 +66,12 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>")   -- Find specific text
 keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>") -- Find specific text
 keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>")   -- Find specific text
 keymap("n", "<leader>tp", "<cmd>Telescope projects<cr>") -- List of projects
+keymap("n", "<leader>c", "<cmd>Telescope commands<cr>")  -- List of projects
 
 
 -- Kommentary
 -- Default configuration
-keymap("n", "gcc", "<Plug>kommentary_line_default", {})
-keymap("n", "gc", "<cmd>kommentary_motion_default", {})
-keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
+keymap("n", "<leader>/", "<Plug>kommentary_line_default")
+keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>")
 
 keymap("n", "<leader>l", ":LspInstallInfo<cr>")
