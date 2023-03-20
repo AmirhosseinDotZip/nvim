@@ -19,8 +19,8 @@ keymap('i', 'jj', '<ESC>')                          -- Escape i mode
 
 keymap('i', '<C-s>', '<C-o>:w<CR>')                 -- Save
 keymap('n', '<leader>w', ':w<CR>')                      -- Save
-keymap('n', '<S-q>', ':wq!<CR>')                    -- Save and exit
-keymap('n', '<C-q>', ':q!<CR>')                    -- Save and exit
+keymap('n', '<S-q>', ':q!<CR>')                    -- Save and exit
+keymap('n', '<C-q>', ':wq!<CR>')                    -- Save and exit
 keymap('n', '<leader>q', ':q<CR>')                    -- Save and exit
 
 -- Harpoon
