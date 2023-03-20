@@ -10,6 +10,26 @@ keymap('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- source config
+
+keymap('n', '<leader>s',
+    ':source C:\\Users\\baniminator\\AppData\\Local\\nvim\\lua\\settings\\keymaps.lua<CR>:source C:\\Users\\baniminator\\AppData\\Local\\nvim\\lua\\settings\\options.lua<CR>')
+
+keymap('i', 'jj', '<ESC>')                          -- Escape i mode
+
+keymap('i', '<C-s>', '<C-o>:w<CR>')                 -- Save
+keymap('n', '<leader>w', ':w<CR>')                      -- Save
+keymap('n', '<S-q>', ':wq!<CR>')                    -- Save and exit
+keymap('n', '<C-q>', ':q!<CR>')                    -- Save and exit
+keymap('n', '<leader>q', ':q<CR>')                    -- Save and exit
+
+-- Harpoon
+keymap('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<cr>')
+keymap('n', '<leader>hl', ':lua require("harpoon.ui").toggle_quick_menu()<cr>')
+-- keymap('n', '<leader>h1', ':lua require("harpoon.ui").nav_file(3)<cr>')
+keymap('n', '<leader>hn', ':lua require("harpoon.ui").nav_next()<cr>')
+keymap('n', '<leader>hp', ':lua require("harpoon.ui").nav_prev()<cr>')
+
 
 keymap('n', '<C-h>', '<C-w>h')                      -- Left slit
 keymap('n', '<C-j>', '<C-w>j')                      -- Top slit
@@ -26,13 +46,6 @@ keymap('n', '<S-h>', ':bprevious<CR>')              -- Previous buffer
 -- keymap('n', '<C-w>', ':bdelete<CR>')                  -- Close buffer
 keymap('n', '<C-w>', ':bdelete<CR>')                -- Close buffer
 
-keymap('i', 'jj', '<ESC>')                          -- Escape i mode
-
-keymap('i', '<C-s>', '<C-o>:w<CR>')                 -- Save
-keymap('n', '<C-s>', ':w<CR>')                      -- Save
-keymap('n', '<C-q>', ':wq!<CR>')                    -- Save and exit
-keymap('n', '<C-c>', ':source %<cr>')               -- Save and exit
-
 keymap('n', 'n', 'nzzzv')                           -- Better movement for next command
 keymap('n', 'N', 'Nzzzv')                           -- Better movement for next command
 
@@ -46,27 +59,27 @@ keymap('v', '<C-v>', '"+p')        --- Paste copied line in visual mode
 keymap('i', '<C-v>', '<Esc>"+pi')  -- Paste copied line in insert mode
 
 
-keymap('n', '<C-b>', ':NvimTreeToggle<cr>')              -- Open explorer tree
+keymap('n', '<C-b>', ':NvimTreeToggle<cr>')               -- Open explorer tree
 
-keymap("n", "<M-j>", ":m .+1<CR>==")                     -- Move line once in n mode (bottom)
-keymap("n", "<M-k>", ":m .-2<CR>==")                     -- Move line once in n mode (top)
-keymap("i", "<M-j>", "<Esc>:m .+1<CR>==")                -- Move line in n mode (bottom)
-keymap("i", "<M-k>", "<Esc>:m .-2<CR>==")                -- Move line in n mode (top)
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv")                 -- Move line (bottom)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv")                 -- Move line (top)
+keymap("n", "<M-j>", ":m .+1<CR>==")                      -- Move line once in n mode (bottom)
+keymap("n", "<M-k>", ":m .-2<CR>==")                      -- Move line once in n mode (top)
+keymap("i", "<M-j>", "<Esc>:m .+1<CR>==")                 -- Move line in n mode (bottom)
+keymap("i", "<M-k>", "<Esc>:m .-2<CR>==")                 -- Move line in n mode (top)
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv")                  -- Move line (bottom)
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv")                  -- Move line (top)
 
-keymap('v', '<', '<gv')                                  -- Better indentation with tab
-keymap('v', '>', '>gv')                                  -- Better indentation with tab (reverse)
+keymap('v', '<', '<gv')                                   -- Better indentation with tab
+keymap('v', '>', '>gv')                                   -- Better indentation with tab (reverse)
 
-keymap('x', 'd', '"_d')                                  -- Delete a line in v mode
+keymap('x', 'd', '"_d')                                   -- Delete a line in v mode
 
-keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>")    -- Find specific files
-keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>") -- Find specific text
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>")   -- Find specific text
-keymap("n", "<leader>h", "<cmd>Telescope help_tags<cr>") -- Find specific text
-keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>")   -- Find specific text
-keymap("n", "<leader>tp", "<cmd>Telescope projects<cr>") -- List of projects
-keymap("n", "<leader>c", "<cmd>Telescope commands<cr>")  -- List of projects
+keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>")     -- Find specific files
+keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>")  -- Find specific text
+keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>")    -- Find specific text
+keymap("n", "<leader>hh", "<cmd>Telescope help_tags<cr>") -- Find specific text
+keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>")    -- Find specific text
+keymap("n", "<leader>tp", "<cmd>Telescope projects<cr>")  -- List of projects
+keymap("n", "<leader>c", "<cmd>Telescope commands<cr>")   -- List of projects
 
 
 -- Kommentary

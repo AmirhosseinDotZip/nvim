@@ -32,6 +32,7 @@ return packer.startup(function(use)
     -- Dependencies
     use "wbthomason/packer.nvim"        -- Packer manage itself
     use { "catppuccin/nvim", as = "catppuccin" }
+    use 'lewis6991/impatient.nvim'      -- Improve startup time
     use 'kyazdani42/nvim-tree.lua'      -- File explorer tree
     use "nvim-telescope/telescope.nvim" -- Find, Filter, Preview, Pick. All lua, all the time.
     use "nvim-lua/plenary.nvim"         -- Useful lua functions used by lots of plugins
@@ -59,19 +60,30 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- Language server installer
     use "jose-elias-alvarez/null-ls.nvim" -- Inject LSP diagnostics, code actions ...
 
+    -- Treesitter
+    use "nvim-treesitter/nvim-treesitter" -- Treesitter configuration
+
     use "b3nj5m1n/kommentary"             -- Commenting plugin
 
     use 'nvim-lualine/lualine.nvim'       -- Easy to configure neovim statusline
     use "akinsho/toggleterm.nvim"         -- Easily manage multiple terminal windows
     use "akinsho/bufferline.nvim"         -- Snazzy bufferline
-    -- use "moll/vim-bbye"                   -- Bclose.vim but rewritten and well maintained.
-    -- use "dhruvmanila/browser-bookmarks.nvim"
 
-
-    use { 'crusj/bookmarks.nvim',
-        branch = 'main',
-        requires = { 'kyazdani42/nvim-web-devicons' }
+    use {
+        'ThePrimeagen/harpoon',
+        requires = { 'nvim-lua/plenary.nvim' }
     }
+
+
+    -- use 'JoseConseco/telescope_sessions_picker.nvim'
+
+    -- use {
+    --     'rmagatti/session-lens',
+    --     requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
+    --     config = function()
+    --         require('session-lens').setup({ --[[your custom config--]] })
+    --     end
+    -- }
 
 
 
