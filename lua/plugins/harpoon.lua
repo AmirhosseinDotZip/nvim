@@ -1,3 +1,4 @@
+---@diagnostic disable: different-requires
 require("harpoon").setup({
     -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
     save_on_toggle = false,
